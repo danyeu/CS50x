@@ -1,0 +1,33 @@
+sort1 uses: Bubble Sort
+
+How do you know?: The worse case is significantly larger than the best case, which implies its not Theta, thus bubble sort. Also the worst is worst of all 3 for 50,000 (corresponds to n^2-2n+1)
+5,000/10,000/50,000:
+    Random:
+        0.078 / 0.297 / 7.386
+    Sorted:
+        0.035 / 0.070 / 0.504
+    Reversed:
+        0.073 / 0.252 /5.650
+
+sort2 uses: Merge Sort
+
+How do you know?: For random, sorted and reversed lists, the times are the same, which implies Theta. These times are also faster than the others (especially for larger n), which implies this is Theta(nlogn), which is merge sort.
+
+5,000/10,000/50,000:
+    Random:
+        0.034 / 0.067 /0.499
+    Sorted:
+        0.034 / 0.060 /0.504
+    Reversed:
+        0.027 / 0.064 /0.514
+
+sort3 uses: Selection Sort
+
+How do you know?: For random, sorted and reversed lists, the times are the same, which implies Theta. These times are slower than sort2, so out of the two Theta algorithms shown, by elimination, this is Theta(n^2), which is selection sort.
+5,000/10,000/50,000:
+    Random:
+        0.069 / 0.169 / 3.040
+    Sorted:
+        0.047 / 0.163 / 3.365
+    Reversed:
+        0.052 / 0.184 / 3.096

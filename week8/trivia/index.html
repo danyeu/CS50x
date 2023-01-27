@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            function check1(id) {
+                let buttons1 = document.querySelectorAll('.b1');
+                for (let i = 0; i < buttons1.length; i++) {
+                    buttons1[i].style.backgroundColor='#d9edff';
+                }
+                if (id == 'right') {
+                    document.querySelector('#'+id).style.backgroundColor='#9fff75';
+                    document.querySelector('#p1').innerHTML='Correct!';
+                }
+                else {
+                    document.querySelector('#'+id).style.backgroundColor='#ff7587';
+                    document.querySelector('#p1').innerHTML='Incorrect';
+                }
+            }
+
+            function check2() {
+                let ans = document.querySelector('#user_ans').value.trim().toLowerCase();
+                if (ans == 'mauritius') {
+                    document.querySelector('#user_ans').style.backgroundColor='#9fff75';
+                    document.querySelector('#p2').innerHTML='Correct!';
+                }
+                else {
+                    document.querySelector('#user_ans').style.backgroundColor='#ff7587';
+                    document.querySelector('#p2').innerHTML='Incorrect';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Which team conceded the most goals in the 2022 FIFA World Cup?</h3>
+                <button id="wrong1" class="b1" onclick="check1(this.id)">Argentina</button>
+                <button id="right" class="b1" onclick="check1(this.id)">Costa Rica</button>
+                <button id="wrong2" class="b1" onclick="check1(this.id)">France</button>
+                <button id="wrong3" class="b1" onclick="check1(this.id)">South Korea</button>
+                <button id="wrong4" class="b1" onclick="check1(this.id)">Switzerland</button>
+                <p id="p1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>Which country did the now extinct Dodo bird inhabit?</h3>
+                <input autocomplete="off" id="user_ans" placeholder="Enter your answer" type="text">
+                <button type="submit" onclick="check2()">Check Answer</button>
+                <p id="p2"></p>
+            </div>
+        </div>
+    </body>
+</html>
